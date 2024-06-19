@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: sh -c "javadoc -sourcepath /app/src/main/java -d /app/doc -subpackages ru.gb.goroninova"
+    volumes:
+      - ./bin:/app/out
+      - ./src:/app/src
+      - ./doc:/app/doc
+
